@@ -1,0 +1,8 @@
+services:
+  - docker
+
+before_script:
+  - docker build -t jupyter-test .
+
+script:
+  - docker run --rm jupyter-test jupyter nbconvert --to notebook --execute /AoC\ 2018.ipynb
