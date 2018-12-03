@@ -1,0 +1,11 @@
+# minimal language just includes git, docker, python, ...
+language: minimal
+
+services:
+  - docker
+
+before_script:
+  - docker build -t jupyter-test .
+
+script:
+  - docker run --rm -v `pwd`:/src jupyter-test jupyter nbconvert --to notebook --execute /src/AoC\ 2018.ipynb --output /tmp/convert.ipynb
