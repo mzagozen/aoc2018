@@ -1,3 +1,6 @@
+# minimal language just includes git, docker, python, ...
+language: minimal
+
 services:
   - docker
 
