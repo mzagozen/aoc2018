@@ -8,4 +8,4 @@ before_script:
   - docker build -t jupyter-test .
 
 script:
-  - docker run --rm jupyter-test jupyter nbconvert --to notebook --execute /src/AoC\ 2018.ipynb
+  - docker run --rm -v `pwd`:/src jupyter-test jupyter nbconvert --to notebook --execute /src/AoC\ 2018.ipynb --output /tmp/convert.ipynb
