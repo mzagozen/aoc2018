@@ -1,3 +1,5 @@
 FROM jupyter/minimal-notebook
 
-COPY ["AoC 2018.ipynb", "/"]
+COPY input/ /src/input
+COPY ["AoC 2018.ipynb", "/src/"]
+WORKDIR /src
